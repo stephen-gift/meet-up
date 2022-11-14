@@ -4,15 +4,15 @@ import Card from "../Ui/Card";
 import classes from "./MeetupItem.module.css";
 
 const MeetupItem = (props) => {
-  const FavouritesCtx = useContext(FavouritesContext);
+  const favouritesCtx = useContext(FavouritesContext);
 
-  const itemIsFavourite = FavouritesCtx.itemIsFavourite(props.id);
+  const itemIsFavourite = favouritesCtx.itemIsFavourite(props.id);
 
   const toggleFavouriteStatusHandler = () => {
     if (itemIsFavourite) {
-      FavouritesCtx.removeFavourite(props.id);
+      favouritesCtx.removeFavourite(props.id);
     } else {
-      FavouritesCtx.addFavourite({
+      favouritesCtx.addFavourite({
         id: props.id,
         title: props.title,
         image: props.image,
